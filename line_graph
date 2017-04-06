@@ -1,0 +1,8 @@
+library(gcookbook)
+library(ggplot2)
+library(plyr) 
+library(dplyr)
+
+ggplot(data=worldwide_refugee_pop, aes(x=year, y= refugee_population_millions)) + geom_line() + geom_point()+geom_line(colour="blue")+ggtitle("Global Refugee Population 1990-2014")+labs(x="year",y="refugee population (millions)") + 
+  theme(plot.title = element_text(family = "Arial", color="#666666", face="bold", size=20, hjust=.5)) +
+  theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=14))  
