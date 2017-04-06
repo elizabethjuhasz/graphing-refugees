@@ -1,0 +1,7 @@
+ggplot(data=Top_ten_2015, aes(x=Country,y=Refugees)) +
+  geom_bar(position="dodge",stat="identity", fill="lightblue", colour="black") + 
+  coord_flip()+
+  ggtitle("Registered Refugees by Country of Asylum mid-2015")+
+scale_x_discrete(limits=c("Sudan","Chad","Uganda","Kenya","Jordan","Ethiopia", "Iran (Islamic Rep. of)","Lebanon","Pakistan","Turkey"))+ 
+  theme(plot.title = element_text(face="bold",hjust=.5))+
+  theme(axis.title = element_text(face = "bold"))
