@@ -1,0 +1,25 @@
+# top ten host states per capita for mid-2015
+
+dat <- read.table(text="
+Country_of_Asylum ISO_3 'Refugees per 1000 inhabitants' Latitude Longitude
+Lebanon LBN   208.91 33.8  35.8
+Jordan  JOR    89.5 31  36
+Nauru   NRU   50.60 0.53 166.9
+Chad   TCD    30.97 15  19
+Turkey   TUR  23.72 39  35
+'South Sudan'   SSD 22.3  4.8  31.6
+Mauritania   MRT  19.4 20 -12
+Djibouti   DJI    16.9 11.5 43
+Sweden   SWE  14.7 62  15
+Malta   MLT  14.6 35  14.4
+                  ", header=TRUE)
+
+library(ggplot2)
+library(maps)
+mdat <- map_data('world')
+str(mdat)
+ggplot() + 
+  geom_polygon(dat=mdat, aes(long, lat, group=group), fill="grey30") +
+  geom_point(data=top_ten_pcapita, 
+             aes(x=Longitude, y=Latitude, size=`Refugees per 1000 inhabitants`), col="lightcoral")+
+  ggtitle("Refugees per Capita by Country of Asylum mid-2015")+theme(plot.title = element_text(hjust=.3))
