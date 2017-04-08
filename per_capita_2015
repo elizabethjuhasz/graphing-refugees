@@ -1,4 +1,5 @@
 # top ten host states per capita for mid-2015
+# data at  http://www.unhcr.org/statistics/mid2015stats.zip (tab1, column2).
 
 dat <- read.table(text="
 Country_of_Asylum ISO_3 'Refugees per 1000 inhabitants' Latitude Longitude
