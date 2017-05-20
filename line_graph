@@ -7,3 +7,15 @@ library(dplyr)
 ggplot(data=worldwide_refugee_pop, aes(x=year, y= refugee_population_millions)) + geom_line() + geom_point()+geom_line(colour="blue")+ggtitle("Global Refugee Population 1990-2014")+labs(x="year",y="refugee population (millions)") + 
   theme(plot.title = element_text(family = "Arial", color="#666666", face="bold", size=20, hjust=.5)) +
   theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=14))  
+
+*** for knitr ***
+```{r pressure, echo=FALSE}
+library(ggplot2)
+worldwide_refugee_pop <- read.csv(file='worldwide_refugee_pop.csv', header=TRUE)
+save(worldwide_refugee_pop, file="worldwide_refugee_pop.RData")
+load(file="worldwide_refugee_pop.RData")
+ggplot(data=worldwide_refugee_pop, aes(x=year, y= refugee_population_millions)) + geom_line() + geom_point()+geom_line(colour="blue")+ggtitle("Global Refugee Population 1990-2014")+labs(x="year",y="refugee population (millions)") + 
+  theme(plot.title = element_text(family = "Arial", color="#666666", face="bold", size=20, hjust=.5)) +
+  theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=14)) 
+
+```
