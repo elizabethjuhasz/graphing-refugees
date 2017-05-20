@@ -1,3 +1,4 @@
+View(worldwide_refugee_pop)
 library(gcookbook)
 library(ggplot2)
 library(plyr) 
